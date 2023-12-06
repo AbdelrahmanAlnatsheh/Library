@@ -9,7 +9,7 @@ package library.project;
  *
  * @author lenevo
  */
-public class Journal extends Books{
+public class Journal extends Book{
      private String conferenceName;
     private int conferenceNumber;
 

@@ -11,13 +11,21 @@ package library.project;
  */
 public class Loan {
     private Student student;
-    private Books book;
+    private Book book;
     private Date dueDate;
+    
 
-    public Loan(Student student, Books book, Date dueDate) {
+   
+  
+    
+    public Loan(Student student, Book book, Date dueDate) {
         this.student = student;
         this.book = book;
         this.dueDate = dueDate;
+    }
+
+    Loan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Student getStudent() {
@@ -28,11 +36,11 @@ public class Loan {
         this.student = student;
     }
 
-    public Books getBook() {
+    public Book getBook() {
         return book;
     }
 
-    public void setBook(Books book) {
+    public void setBook(Book book) {
         this.book = book;
     }
 

@@ -9,7 +9,7 @@ package library.project;
  *
  * @author lenevo
  */
-public class Books {
+public class Book {
     private String title;
     private String author;
     private int publicationNumber;
@@ -17,7 +17,7 @@ public class Books {
     private int version;
     private Date dateBook;
 
-    public Books(String title, String author, int publicationNumber, String genre, int version, Date dateBook) {
+    public Book(String title, String author, int publicationNumber, String genre, int version, Date dateBook) {
         this.title = title;
         this.author = author;
         this.publicationNumber = publicationNumber;

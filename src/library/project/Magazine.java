@@ -9,7 +9,7 @@ package library.project;
  *
  * @author lenevo
  */
-public class Magazine extends Books{
+public class Magazine extends Book{
     private int issueNumber;
     private Date releaseDate;
 

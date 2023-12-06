@@ -5,20 +5,26 @@
  */
 package library.project;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author lenevo
  */
 public class Library {
     private Author auther ;
-    private Books book;
+    private Book book;
     private Date data;
     private Journal jourranal;
     private Loan loan;
     private Magazine magzine;
     private Student student;
+    
+    private List<Book> books;
+    private List<Student> students;
 
-    public Library(Author auther, Books book, Date data, Journal jourranal, Loan loan, Magazine magzine, Student student) {
+   public Library(Author auther, Book book, Date data, Journal jourranal, Loan loan, Magazine magzine, Student student) {
         this.auther = auther;
         this.book = book;
         this.data = data;
@@ -27,7 +33,7 @@ public class Library {
         this.magzine = magzine;
         this.student = student;
     }
-
+    
     public Author getAuther() {
         return auther;
     }
@@ -36,11 +42,11 @@ public class Library {
         this.auther = auther;
     }
 
-    public Books getBook() {
+    public Book getBook() {
         return book;
     }
 
-    public void setBook(Books book) {
+    public void setBook(Book book) {
         this.book = book;
     }
 
@@ -84,9 +90,79 @@ public class Library {
         this.student = student;
     }
     
-    
-    
-    
-    
-    
+  
+    public List<Book> searchBooksByTitle(String title) {
+    List<Book> result = new ArrayList<>();
+    for (Book book : books) {
+        if (book.getTitle().equalsIgnoreCase(title)) { 
+            result.add(book);
+        }
+    }
+    return result;
 }
+    public List<Book> searchBooksByNo(int  no) {
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getPublicationNumber()== no) {
+                result.add(book);
+            }
+        }
+        return result;
+    }
+    
+    
+    public List<Book> searchBooksByAuthor(String authorName) {
+    List<Book> result = new ArrayList<>();
+    for (Book book : books) {
+        if (book.getAuthor().getName().equalsIgnoreCase(authorName)) {
+            result.add(book);
+        }
+    }
+    return result;
+}
+   
+
+      
+      public List<Loan> checkBookLoans(Book book) {
+        List<Loan> result = new ArrayList<>();
+        for (Student student : students) {
+            for (Book borrowedBook : student.BookLoans ) {
+                if (borrowedBook.equals(book)) {
+                    Loan loan = new Loan(student, book, data);
+                    loan.setStudent(student);
+                    loan.setBook(book);    
+                    result.add(loan);
+                   
+                }
+            }
+        }
+        return result;
+    }
+      
+       public void addBook(Book book) {
+        books.add(book);
+    }
+
+    public void removeBook(Book book) {
+        books.remove(book);
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
+    }
+
+    List<Book> borrowBooks(int numberOfBooks) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    List<Loan> checkBookLoans() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
+
+    
+    

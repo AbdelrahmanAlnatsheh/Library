@@ -5,6 +5,9 @@
  */
 package library.project;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author lenevo
@@ -15,6 +18,8 @@ public class Student {
     private String address;
     private Date birthDate;
     private String major;
+    private Iterable<Student> students;
+    private Object book;
 
     public Student(int studentId, String name, String address, Date birthDate, String major) {
         this.studentId = studentId;
@@ -66,4 +71,20 @@ public class Student {
     }
     
     
+     public void borrowBooksFromLibrary(Library library) {
+        for (int day = 1; day <= 5 ; day++) {
+            List<Book> borrowedBooks = library.borrowBooks(3);
+
+            if (borrowedBooks.size() >= 3) {
+                borrowedBooks.addAll(borrowedBooks);
+                System.out.println("Day " + day + ": " + this.name + " borrowed at least 3 books - " + borrowedBooks);
+                break; 
+            } else {
+                System.out.println("Day " + day + ": " + this.name + " borrowed less than 3 books - " + borrowedBooks);
+            }
+        }
+    }
+
+
+  
 }
