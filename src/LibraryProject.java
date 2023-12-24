@@ -3,26 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package library.project;
+//package library.project;
 
-import java.util.List;
-import java.util.Scanner;
+//import java.util.List;
+//import java.util.Scanner;
+
 
 /**
  *
  * @author lenevo
  */
-public class LibraryProject {
+/*public class LibraryProject {
       
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+   // public static void main(String[] args) {
         
        
 
         // TODO code application logic here
-        Library library=new library();
+     
+      /*  Library library= new Library();
         Scanner scanner = new Scanner(System.in);
         
 

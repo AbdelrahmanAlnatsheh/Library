@@ -32,7 +32,16 @@ public class Library {
         this.loan = loan;
         this.magzine = magzine;
         this.student = student;
+         
+
+        
     }
+
+    Library() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   
+   
     
     public Author getAuther() {
         return auther;
@@ -114,7 +123,7 @@ public class Library {
     public List<Book> searchBooksByAuthor(String authorName) {
     List<Book> result = new ArrayList<>();
     for (Book book : books) {
-        if (book.getAuthor().getName().equalsIgnoreCase(authorName)) {
+        if (book.getAuthor().equalsIgnoreCase(getAuther().getName())) {
             result.add(book);
         }
     }
@@ -123,10 +132,10 @@ public class Library {
    
 
       
-      public List<Loan> checkBookLoans(Book book) {
+     public List<Loan> checkBookLoans(Book book) {
         List<Loan> result = new ArrayList<>();
         for (Student student : students) {
-            for (Book borrowedBook : student.BookLoans ) {
+            for (Book borrowedBook : student.getBookLoans() ) {
                 if (borrowedBook.equals(book)) {
                     Loan loan = new Loan(student, book, data);
                     loan.setStudent(student);
@@ -138,6 +147,8 @@ public class Library {
         }
         return result;
     }
+      
+
       
        public void addBook(Book book) {
         books.add(book);

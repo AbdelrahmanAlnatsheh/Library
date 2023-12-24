@@ -20,6 +20,11 @@ public class Student {
     private String major;
     private Iterable<Student> students;
     private Object book;
+    private List<Book> bookLoans;
+   
+    
+    
+    
 
     public Student(int studentId, String name, String address, Date birthDate, String major) {
         this.studentId = studentId;
@@ -27,6 +32,15 @@ public class Student {
         this.address = address;
         this.birthDate = birthDate;
         this.major = major;
+    }
+    public List<Book> getBookLoans() {
+        return this.bookLoans;
+        
+    }
+   
+    public String BookLoans()
+    {
+        return name;
     }
 
     public int getStudentId() {

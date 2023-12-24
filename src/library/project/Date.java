@@ -19,7 +19,7 @@ public class Date {
         this.month = month;
         this.year = year;
     }
-
+ 
     public void setDay(int day) {
         this.day = day;
     }

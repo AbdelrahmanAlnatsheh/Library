@@ -10,7 +10,7 @@ package library.project;
  * @author lenevo
  */
 public class Book {
-    private String title;
+    String title;
     private String author;
     private int publicationNumber;
     private String genre;
@@ -24,6 +24,10 @@ public class Book {
         this.genre = genre;
         this.version = version;
         this.dateBook = dateBook;
+    }
+
+    Book(String bookTitle, String bookAuthor) {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     public void setTitle(String title) {
